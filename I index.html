@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Independent research dashboard comparing textile waste and circular economy practices in India and China.">
+  <title>India–China Textile Sustainability | Research Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f8f7;
+      color: #173b35;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #103f37, #16745e);
+      color: white;
+      padding: 55px 22px;
+      text-align: center;
+    }
+    header h1 { font-size: 30px; margin: 0 0 12px; }
+    header p { max-width: 700px; margin: auto; }
+    .tag {
+      display: inline-block;
+      background: #d7eee4;
+      color: #125644;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+    main { max-width: 1100px; margin: auto; padding: 24px 16px; }
+    section {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 20px 0;
+      box-shadow: 0 3px 15px #163c3210;
+    }
+    h2 { font-size: 22px; margin-top: 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #eef7f2;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; }
+    .notice {
+      border-left: 4px solid #c58b26;
+      background: #fff8e8;
+      padding: 14px;
+      border-radius: 6px;
+      color: #684b17;
+    }
+    .chart-box { max-width: 720px; margin: 20px auto; }
+    select {
+      padding: 12px;
+      border: 1px solid #a6c5b8;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 350px;
+      font-size: 15px;
+    }
+    a { color: #087b65; overflow-wrap: anywhere; }
+    li { margin-bottom: 10px; }
+    footer {
+      background: #103f37;
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+      margin-top: 35px;
+    }
+    footer p { margin: 5px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="tag">Independent Research Project | 2026</span>
+  <h1>India–China Textile Waste & Circular Fashion Dashboard</h1>
+  <p>Comparative research on textile waste, recycling systems,
+  sustainable supply chains and circular economy practices.</p>
+  <p><strong>Researcher: Sneha Yadav</strong></p>
+</header>
+
+<main>
+
+<section>
+  <h2>Research Overview</h2>
+  <p>
+    This independent research project examines textile waste
+    management and circular economy initiatives in India and China.
+    It aims to identify evidence-based opportunities for more
+    sustainable apparel supply chains and small businesses.
+  </p>
+</section>
+
+<section>
+  <h2>Country Research Profiles</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🇮🇳 India</h3>
+      <p>Focus: Textile waste management, recycling infrastructure,
+      apparel manufacturing and SME sustainability.</p>
+    </div>
+    <div class="card">
+      <h3>🇨🇳 China</h3>
+      <p>Focus: Textile recycling, circular economy policies,
+      manufacturing systems and resource recovery.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Comparative Data Explorer</h2>
+  <p>Select a research indicator to explore the data structure.</p>
+
+  <label for="indicator"><strong>Research indicator</strong></label>
+  <br>
+  <select id="indicator" onchange="updateChart()">
+    <option value="waste">Textile Waste Generation</option>
+    <option value="recycling">Textile Recycling</option>
+    <option value="circular">Circular Economy Indicators</option>
+  </select>
+
+  <div class="chart-box">
+    <canvas id="comparisonChart"></canvas>
+  </div>
+
+  <p id="chartMessage" class="notice" role="status"></p>
+
+  <p>
+    Data will be added only after checking source reliability,
+    measurement units, reporting years and comparability.
+  </p>
+</section>
+
+<section>
+  <h2>Research Questions</h2>
+  <ol>
+    <li>How do textile waste management systems differ between India and China?</li>
+    <li>What recycling and circular economy initiatives are documented in both countries?</li>
+    <li>What barriers affect sustainable textile supply chains?</li>
+    <li>What lessons can small apparel businesses learn from these systems?</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Research Methodology</h2>
+  <p><strong>Research approach:</strong> Comparative secondary research.</p>
+  <p><strong>Data collection:</strong> Government publications,
+  international organization reports and academic studies.</p>
+  <p><strong>Analysis:</strong> Descriptive statistics, data visualization,
+  comparative analysis and evidence synthesis.</p>
+  <p><strong>Data integrity:</strong> Statistics from different years,
+  definitions or measurement systems will not be presented as
+  directly comparable without appropriate justification.</p>
+</section>
+
+<section>
+  <h2>Research Sources</h2>
+  <ul>
+    <li>
+      <a href="https://texmin.nic.in/" target="_blank" rel="noopener noreferrer">
+        Ministry of Textiles, Government of India
+      </a>
+    </li>
+    <li>
+      <a href="https://english.www.gov.cn/" target="_blank" rel="noopener noreferrer">
+        Government of China
+      </a>
+    </li>
+    <li>
+      <a href="https://www.unep.org/" target="_blank" rel="noopener noreferrer">
+        United Nations Environment Programme
+      </a>
+    </li>
+    <li>
+      <a href="https://www.sciencedirect.com/" target="_blank" rel="noopener noreferrer">
+        Academic Research Literature
+      </a>
+    </li>
+  </ul>
+  <p>Specific publications, dates and dataset citations will be
+  documented as the evidence database is developed.</p>
+</section>
+
+<section>
+  <h2>Research Status</h2>
+  <div class="card">
+    <h3>Phase 1 — Dashboard Foundation</h3>
+    <p>Website structure and research framework established.
+    Data verification and comparative analysis are the next steps.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>India–China Textile Sustainability Research</strong></p>
+  <p>Independent Research Project by Sneha Yadav</p>
+  <p>2026 | Research Portfolio</p>
+</footer>
+
+<script>
+  const chartContext = document.getElementById("comparisonChart");
+  const message = document.getElementById("chartMessage");
+
+  const indicatorNames = {
+    waste: "Textile Waste Generation",
+    recycling: "Textile Recycling",
+    circular: "Circular Economy Indicators"
+  };
+
+  const comparisonChart = new Chart(chartContext, {
+    type: "bar",
+    data: {
+      labels: ["India", "China"],
+      datasets: [{
+        label: "Verified comparable data pending",
+        data: [null, null],
+        backgroundColor: ["#16866b", "#55b5a2"],
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: indicatorNames.waste
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: "Unit pending data verification"
+          }
+        }
+      }
+    }
+  });
+
+  function updateChart() {
+    const selected = document.getElementById("indicator").value;
+    comparisonChart.options.plugins.title.text = indicatorNames[selected];
+    comparisonChart.update();
+    message.textContent =
+      "Verified comparable India–China data for " +
+      indicatorNames[selected].toLowerCase() +
+      " has not yet been entered. No values are estimated or fabricated.";
+  }
+
+  updateChart();
+</script>
+
+</body>
+</html>
