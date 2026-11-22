@@ -144,6 +144,58 @@
   </p>
 </section>
 
+<section id="india-waste-chart">
+  <h2>India Textile Waste Composition</h2>
+
+  <p>
+    Distribution of pre-consumer and
+    post-consumer textile waste, based on
+    figures reported in 2026.
+  </p>
+
+  <div class="chart-box">
+    <canvas id="indiaWasteChart"></canvas>
+  </div>
+
+  <p class="notice">
+    Source: Ministry of Textiles, India.
+    Publication year: 2026.
+    Underlying measurement period requires
+    further verification.
+  </p>
+</section>
+
+<script>
+  new Chart(
+    document.getElementById("indiaWasteChart"),
+    {
+      type: "doughnut",
+      data: {
+        labels: [
+          "Pre-consumer waste",
+          "Post-consumer waste"
+        ],
+        datasets: [{
+          data: [42, 58],
+          backgroundColor: [
+            "#16866b",
+            "#e6a65c"
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: "Textile Waste Composition (%)"
+          }
+        }
+      }
+    }
+  );
+</script>
+
 <section id="verified-data">
   <h2>Verified Research Data</h2>
 
