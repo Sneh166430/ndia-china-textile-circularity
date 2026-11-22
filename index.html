@@ -196,6 +196,75 @@
   );
 </script>
 
+<section id="china-recycling-chart">
+  <h2>China Textile Recycling Policy Targets</h2>
+
+  <p>
+    China's 2022 textile recycling guideline
+    established recycling targets for 2025
+    and 2030. These figures represent policy
+    targets, not actual recycling achievements.
+  </p>
+
+  <div class="chart-box">
+    <canvas id="chinaRecyclingChart"></canvas>
+  </div>
+
+  <p class="notice">
+    Research Note: The chart displays planned
+    recycling targets only. Actual recycling
+    performance requires separate verification.
+  </p>
+
+  <p>
+    Source:
+    <a href="https://english.www.gov.cn/statecouncil/ministries/202204/20/content_WS625f649fc6d02e5335329a8f.html"
+       target="_blank" rel="noopener noreferrer">
+      China State Council — Textile Recycling Guideline (2022)
+    </a>
+  </p>
+</section>
+
+<script>
+  new Chart(
+    document.getElementById("chinaRecyclingChart"),
+    {
+      type: "bar",
+      data: {
+        labels: ["2025 Target", "2030 Target"],
+        datasets: [{
+          label: "Recycling Target (%)",
+          data: [25, 30],
+          backgroundColor: [
+            "#16866b",
+            "#e6a65c"
+          ],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: "China Textile Recycling Targets (%)"
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            title: {
+              display: true,
+              text: "Target Percentage (%)"
+            }
+          }
+        }
+      }
+    }
+  );
+</script>
+
 <section id="verified-data">
   <h2>Verified Research Data</h2>
 
